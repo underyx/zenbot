@@ -1,9 +1,14 @@
+import re
+
 from aiohttp import web
 from . import zencyclopedia
 
 async def provide_zen(request):
     await request.post()
-    fragments_of_zen = request.POST['text'].split()
+    fragments_of_zen = [
+        re.search(r'\w*', fragment.lower()).group()
+        for fragment in request.POST['text'].split()
+    ]
 
     try:
         zen_results = [
