@@ -18,7 +18,7 @@ async def provide_zen(request):
         zen_candidates = set.intersection(*zen_results)
     except KeyError:
         return web.json_response({
-            'response_type': 'in_channel',
+            'response_type': 'ephemeral',
             'text': (
                 'Sorry, but I scoured the entire zencyclopedia and still '
                 "couldn't find a match for your request :("
