@@ -3,12 +3,22 @@ import re
 from aiohttp import web
 from . import zencyclopedia
 
+
 async def provide_zen(request):
     await request.post()
     fragments_of_zen = [
         re.search(r'\w*', fragment.lower()).group()
         for fragment in request.POST['text'].split()
     ]
+
+    if not any(fragments_of_zen):
+        return web.json_response({
+            'response_type': 'ephemeral',
+            'text': (
+                "Sorry, but no matter how hard I look, I just don't see what"
+                "you're asking of me :("
+            ),
+        })
 
     try:
         zen_results = [
