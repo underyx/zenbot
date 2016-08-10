@@ -6,7 +6,7 @@ with io.open('README.md', encoding='utf-8') as f:
 
 setup(
     name='zenbot',
-    version='0.1.3',
+    version='0.1.4',
     url='https://github.com/underyx/zenbot',
     author='Bence Nagy',
     author_email='bence@underyx.me',
