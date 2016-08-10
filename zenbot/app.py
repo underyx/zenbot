@@ -15,7 +15,7 @@ async def provide_zen(request):
         return web.json_response({
             'response_type': 'ephemeral',
             'text': (
-                "Sorry, but no matter how hard I look, I just don't see what"
+                "Sorry, but no matter how hard I look, I just don't see what "
                 "you're asking of me :("
             ),
         })
