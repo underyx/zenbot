@@ -25,8 +25,8 @@ async def provide_zen(request):
             'response_type': 'ephemeral',
             'text': (
                 'Your request could match multiple lines, and in the face of '
-                'ambiguity, I refused the temptation to guess. Try again with'
-                'a request that only matches one of these lines:\n\n'
+                'ambiguity, I refused the temptation to guess. Try again '
+                'with a request that only matches one of these lines:\n\n'
             ) + '\n'.join(' - ' + candidate for candidate in zen_candidates),
         })
 
