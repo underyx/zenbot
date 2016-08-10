@@ -27,6 +27,9 @@ async def provide_zen(request):
         ]
         zen_candidates = set.intersection(*zen_results)
     except KeyError:
+        zen_candidates = set()
+
+    if not zen_candidates:
         return web.json_response({
             'response_type': 'ephemeral',
             'text': (
