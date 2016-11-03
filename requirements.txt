@@ -7,4 +7,4 @@
 aiohttp==1.1.0
 chardet==2.3.0            # via aiohttp
 gunicorn==19.6.0
-multidict==1.2.2          # via aiohttp
+multidict==2.1.2 # via aiohttp
