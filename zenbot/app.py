@@ -5,10 +5,9 @@ from . import zencyclopedia
 
 
 async def provide_zen(request):
-    await request.post()
+    data = await request.post()
     fragments_of_zen = [
-        re.search(r"\w*", fragment.lower()).group()
-        for fragment in request.POST["text"].split()
+        re.search(r"\w*", fragment.lower()).group() for fragment in data["text"].split()
     ]
 
     if not any(fragments_of_zen):
