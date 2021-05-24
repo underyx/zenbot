@@ -3,19 +3,18 @@
 Zen distribution system, happily interfacing with a specific team communication
 service named Slack.
 
-## Usage
+## How to run
 
-```
-docker build -t zenbot .
-docker run -P zenbot
+```bash
+docker run ghcr.io/underyx/zenbot
 ```
 
-## The other sort of usage
+## How to use
 
 You say:
 
->/zen explicit
+> /zen explicit
 
 Channel sees:
 
->Explicit is better than implicit.
+> Explicit is better than implicit.

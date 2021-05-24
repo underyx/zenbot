@@ -1,14 +1,14 @@
-FROM python:3.5-slim
+FROM python:3.9-alpine
 
-MAINTAINER Bence Nagy <bence@underyx.me>
-
-RUN mkdir /app
 WORKDIR /app
 
-COPY requirements.txt /app
-RUN pip install --no-cache-dir -r requirements.txt
+COPY pyproject.toml poetry.lock /app/
+RUN pip install poetry~=1.1.6 &&\
+  poetry install --no-root
 
-COPY . /app
+COPY . /app/
 
-CMD [ "gunicorn", "zenbot:app", "--bind", ":80", "--worker-class", "aiohttp.worker.GunicornWebWorker" ]
+RUN poetry install
+
+CMD [ "gunicorn", "zenbot", "--bind", ":80", "--worker-class", "aiohttp.worker.GunicornWebWorker" ]
 EXPOSE 80
