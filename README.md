@@ -1,7 +1,6 @@
 # zenbot
 
-Zen distribution system, happily interfacing with a specific team communication
-service named Slack.
+The Zen of Python in Slack
 
 ## How to run
 
