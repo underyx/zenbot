@@ -24,7 +24,7 @@ jobs:
         id: docker_meta
         uses: docker/metadata-action@v3.6.0
         with:
-          images: ghcr.io/${{ github.repository }}
+          images: ghcr.io/${{ github.repository }}/app
           flavor: |
             latest=false
           tags: |
